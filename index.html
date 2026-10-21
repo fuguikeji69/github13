@@ -1,3 +1,4 @@
+
 <html>
 
 <head>
@@ -8,236 +9,1211 @@
     <link rel="stylesheet" href="./skin/style_icon.css">
     <link rel="stylesheet" href="./skin/index.css">
     <script src="./skin/nutui.umd.4.3.8.js"></script>
-    <title>金河娱乐</title>
-    <meta name="keywords" content="">
-    <meta name="description" content="">
-    <link rel="icon" href="./skin/0544aa35b27947c89122b31183d19d04.png" type="image/png">
-    <style>
-        .lang_radio {
-            display: none;
-        }
+    <title>恭喜发财</title>
+    <meta name="keywords" content="恭喜发财：十年老平台，信誉保障、福利优厚、优质服务，恭喜发财长期招收实力代理、合作伙伴，共同携手创造辉煌！">
+    <meta name="description" content="恭喜发财，您值得信任的集团品牌">
+    <meta http-equiv="X-Frame-Options" content="SAMEORIGIN">
+    <meta http-equiv="X-Content-Type-Options" content="nosniff">
+    <meta name="referrer" content="strict-origin-when-cross-origin">
 
-        .lang_radio_img {
-            vertical-align: unset !important;
-            width: 13px !important;
-            height: 13px !important;
-            margin-top: 0px !important;
-            cursor: pointer;
-            margin-right: 3px !important;
-            margin-top: 4px !important;
-            display: inline;
-            min-height: unset !important;
-            min-width: unset !important;
+    <meta http-equiv="Content-Security-Policy" content="
+        default-src 'self' data: blob:;
+        script-src 'self' 'unsafe-inline' https: http:;
+        style-src 'self' 'unsafe-inline' https: http:;
+        font-src 'self' data: https: http:;
+        img-src 'self' data: blob: https: http:;
+        connect-src 'self' https: http: wss: ws:;
+        frame-src 'self' https: http:;
+        frame-ancestors 'self';
+    ">
+ <style>
+        /* 金色奢华背景 */
+        html {
+            background: linear-gradient(180deg, #2a1f0f 0%, #1a1208 50%, #0f0904 100%) !important;
+            min-height: 100vh;
         }
-    </style>
-    <style>
-        .marquee-container {
+        
+        body {
+            background: linear-gradient(180deg, #2a1f0f 0%, #1a1208 50%, #0f0904 100%) !important;
+            background-attachment: fixed !important;
+            min-height: 100vh;
+            margin: 0;
+            padding: 0;
+        }
+        
+        /* ===== 金币飘落效果（优化版，减少70%） ===== */
+        
+        .coins-container {
+            position: fixed;
+            top: 0;
+            left: 0;
             width: 100%;
-            /* 根据需要调整宽度 */
+            height: 100%;
+            pointer-events: none;
+            z-index: 1;
             overflow: hidden;
-            /* 隐藏超出部分 */
-            white-space: nowrap;
-            /* 不换行 */
-            box-sizing: border-box;
-            position: relative;
         }
-
-        .marquee {
-            display: inline-block;
-            padding-left: 10%;
-            /* 开始位置在右侧 */
-            animation: marquee 25s linear infinite;
-            /* 动画效果 */
+        
+        .coin {
+            position: absolute;
+            font-size: 24px;
+            animation: coin-fall linear infinite;
+            text-shadow: 0 0 10px rgba(255,215,0,0.8);
+            will-change: transform;
         }
-
-        @keyframes marquee {
+        
+        /* 从20个减少到6个 */
+        .coin:nth-child(1) { left: 10%; animation-duration: 5s; animation-delay: 0s; }
+        .coin:nth-child(2) { left: 35%; animation-duration: 6s; animation-delay: 2s; }
+        .coin:nth-child(3) { left: 60%; animation-duration: 5.5s; animation-delay: 1s; }
+        .coin:nth-child(4) { left: 85%; animation-duration: 7s; animation-delay: 3s; }
+        .coin:nth-child(5) { left: 20%; animation-duration: 5s; animation-delay: 4s; }
+        .coin:nth-child(6) { left: 70%; animation-duration: 6s; animation-delay: 2.5s; }
+        
+        @keyframes coin-fall {
             0% {
-                transform: translateX(0);
-                /* 初始位置 */
+                transform: translateY(-50px) rotate(0deg) scale(1);
+                opacity: 1;
             }
             100% {
-                transform: translateX(-100%);
-                /* 结束位置 */
+                transform: translateY(calc(100vh + 50px)) rotate(720deg) scale(0.8);
+                opacity: 0.3;
             }
         }
-    </style>
-    <style>
-        .responsive-img {
-            max-width: 100%;
-            /* 最大宽度为100% */
-            height: auto;
-            /* 高度自动调整 */
+        
+        /* 金币闪光（从5个减少到1个） */
+        .coin-shine {
+            position: absolute;
+            width: 30px;
+            height: 30px;
+            background: radial-gradient(circle, rgba(255,215,0,0.8), transparent);
+            border-radius: 50%;
+            animation: shine-pulse 3s ease-in-out infinite;
+            will-change: transform, opacity;
         }
+        
+        .coin-shine:nth-child(1) { left: 50%; top: 30%; animation-delay: 0s; }
+        
+        @keyframes shine-pulse {
+            0%, 100% { transform: scale(0.3); opacity: 0; }
+            50% { transform: scale(1.2); opacity: 0.6; }
+        }
+        
+        /* 金色粒子（从6个减少到2个） */
+        .gold-particles {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 1;
+        }
+        
+        .gold-particle {
+            position: absolute;
+            width: 2px;
+            height: 2px;
+            background: #ffd700;
+            border-radius: 50%;
+            box-shadow: 0 0 6px #ffd700;
+            animation: gold-float 12s infinite linear;
+            will-change: transform, opacity;
+        }
+        
+        .gold-particle:nth-child(1) { left: 25%; animation-delay: 0s; }
+        .gold-particle:nth-child(2) { left: 75%; animation-delay: 6s; }
+        
+        @keyframes gold-float {
+            0% { transform: translateY(0); opacity: 0; }
+            10% { opacity: 0.8; }
+            90% { opacity: 0.8; }
+            100% { transform: translateY(-100vh); opacity: 0; }
+        }
+        
+        /* 金色光晕（保留） */
+        .gold-glow {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(ellipse at 50% 0%, rgba(255,215,0,0.15) 0%, transparent 50%);
+            pointer-events: none;
+            z-index: 1;
+        }
+        
+        /* 彩带效果（从9个减少到3个） */
+        .confetti {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 1;
+        }
+        
+        .confetti-piece {
+            position: absolute;
+            width: 6px;
+            height: 12px;
+            animation: confetti-fall 7s ease-in infinite;
+            will-change: transform;
+        }
+        
+        .confetti-piece:nth-child(1) { background: #ffd700; left: 20%; animation-delay: 0s; }
+        .confetti-piece:nth-child(2) { background: #ff6b6b; left: 50%; animation-delay: 3s; }
+        .confetti-piece:nth-child(3) { background: #4ecdc4; left: 80%; animation-delay: 1.5s; }
+        
+        @keyframes confetti-fall {
+            0% { transform: translateY(-20px) rotate(0deg); opacity: 1; }
+            100% { transform: translateY(100vh) rotate(360deg); opacity: 0.2; }
+        }
+        
+        /* ===== 页面结构 ===== */
+        
+        .page {
+            background: transparent !important;
+            position: relative;
+            z-index: 10;
+            min-height: 100vh;
+        }
+        
+        /* app-item 使用 bg3.png */
+        .page .cont-box .app-list .app-item {
+            background: url("./images/bg3.webp") no-repeat !important;
+            background-size: 100% 100% !important;
+            position: relative;
+            z-index: 10;
+        }
+        
+        .page .cont-box .notice-bar {
+            background: linear-gradient(90deg, #4a3a20 0%, #2a1f0f 100%) !important;
+            border: 1px solid rgba(212,175,55,0.3);
+            box-shadow: 0 0 15px rgba(212,175,55,0.2);
+            position: relative;
+            z-index: 10;
+        }
+        
+        /* 快捷入口图片圆角 */
+        .page .cont-box .app-box a {
+            border-radius: 12px;
+            overflow: hidden;
+            display: block;
+            box-shadow: 0 0 15px rgba(255,215,0,0.3);
+            transition: all 0.3s;
+        }
+        .page .cont-box .app-box a:hover {
+            box-shadow: 0 0 25px rgba(255,215,0,0.5);
+            transform: scale(1.05);
+        }
+        .page .cont-box .app-box a img {
+            border-radius: 12px;
+            display: block;
+        }
+        
+        /* 文字颜色 */
+
+        /* 下载按钮金色效果 */
+.download-text {
+font-weight: 900;
+/* 纵向上下流金：top浅金→中间亮黄金→底部暗鎏金 */
+background: linear-gradient(to bottom, #fff8d2, #ffdd70, #c89c3c);
+-webkit-background-clip: text;
+background-clip: text;
+color: transparent;
+-webkit-text-fill-color: transparent;
+overflow: hidden;
+white-space: nowrap;
+text-overflow: ellipsis;
+}
+        
+        /* 原有样式 */
+        .lang_radio { display: none; }
+        .lang_radio_img { vertical-align: unset !important; width: 13px !important; height: 13px !important; margin-top: 0px !important; cursor: pointer; margin-right: 3px !important; margin-top: 4px !important; display: inline; min-height: unset !important; min-width: unset !important; }
+        .marquee-container { width: 100%; overflow: hidden; white-space: nowrap; box-sizing: border-box; position: relative; }
+        .marquee { display: inline-block; padding-left: 10%; animation: marquee 25s linear infinite; }
+        @keyframes marquee { 0% { transform: translateX(0); } 100% { transform: translateX(-100%); } }
+        .responsive-img { max-width: 100%; height: auto; }
+        
+        /* 客服链接 */
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { min-height: 100vh; position: relative; overflow-x: hidden; font-family: Arial, "Microsoft Yahei", sans-serif; }
+        .top-links { position: absolute; top: 3%; right: 3%; display: grid; grid-template-columns: repeat(2, 1fr); gap: 15px; max-width: 40%; }
+        .bottom-link { position: fixed; top: 50%; right: 20px; transform: translateY(-50%); animation: float 2s ease-in-out infinite; z-index: 1000; }
+        .image-link { display: block; transition: all 0.3s ease; filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.3)); }
+        .image-link img { width: 150px; height: auto; border-radius: 8px; }
+        .image-link:hover { transform: scale(1.1); filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.4)); }
+        @keyframes float { 0%, 100% { transform: translateY(-50%) translateY(0); } 50% { transform: translateY(-50%) translateY(-10px); } }
+        @media (max-width: 768px) { .top-links { gap: 10px; max-width: 60%; } .bottom-link { right: 10px; } .bottom-link img { width: 100px !important; } }
+        @media (min-width: 1200px) { .top-links { gap: 20px; } }
     </style>
+</head>
+<body>
+    <!-- 金币雨背景（优化版，减少70%） -->
+    <div class="coins-container">
+        <div class="coin">💰</div>
+        <div class="coin">🪙</div>
+        <div class="coin">💎</div>
+        <div class="coin">💰</div>
+        <div class="coin">🪙</div>
+        <div class="coin">💎</div>
+
+    </div>
+        <div class="coins-container">
+        <div class="coin">💰</div>
+        <div class="coin">🪙</div>
+        <div class="coin">💎</div>
+        <div class="coin">💰</div>
+        <div class="coin">🪙</div>
+        <div class="coin">💎</div>
+    </div>
+    
+    <div class="coin-shine"></div>
+    
+    <div class="gold-particles">
+        <div class="gold-particle"></div>
+        <div class="gold-particle"></div>
+    </div>
+    
+    <div class="gold-glow"></div>
+    
+    <div class="confetti">
+        <div class="confetti-piece"></div>
+        <div class="confetti-piece"></div>
+        <div class="confetti-piece"></div>
+    </div>
+
+
 </head>
 
 <body>
     <div id="app" class="page" data-v-app="">
         <div class="page-cont">
+            <div class="head-bar">
+            </div>
 
-            <img src="./images/img6.png" class="responsive-img">
-            <img src="./skin/lb.png" class="responsive-img">
+            <img src="./static/upload/image/20250417/1744882140152519.webp"" class="responsive-img">
+                          <style>
+        /* ========== 在线人数显示样式 ========== */
+        .online-counter {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            margin: 15px auto;
+            background: linear-gradient(135deg, rgba(255,215,0,0.2), rgba(255,140,0,0.1));
+            border: 1px solid rgba(255,215,0,0.5);
+            border-radius: 20px;
+            padding: 8px 20px;
+            backdrop-filter: blur(10px);
+            animation: counter-pulse 2s ease-in-out infinite;
+        }
+        
+        .online-dot {
+            width: 8px;
+            height: 8px;
+            background: #00ff00;
+            border-radius: 50%;
+            animation: dot-blink 1s ease-in-out infinite;
+            box-shadow: 0 0 10px #00ff00;
+        }
+        
+        .online-text {
+            color: #ffd700;
+            font-size: 12px;
+            font-weight: 600;
+        }
+        
+        .online-number {
+            color: #fff;
+            font-size: 14px;
+            font-weight: 700;
+            text-shadow: 0 0 10px rgba(255,215,0,0.5);
+            transition: all 0.3s ease;
+            display: inline-block;
+        }
+        
+        .online-number.jump {
+            animation: numberJump 0.4s ease-out;
+            color: #00ff00;
+            text-shadow: 0 0 20px #00ff00;
+        }
+        
+        @keyframes numberJump {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.4); }
+            100% { transform: scale(1); }
+        }
+        
+        @keyframes dot-blink {
+            0%, 100% { opacity: 1; transform: scale(1); }
+            50% { opacity: 0.5; transform: scale(0.8); }
+        }
+        
+        @keyframes counter-pulse {
+            0%, 100% { box-shadow: 0 0 10px rgba(255,215,0,0.3); }
+            50% { box-shadow: 0 0 20px rgba(255,215,0,0.6); }
+        }
+        
+        /* ========== 实时提现（奖励墙）样式 ========== */
+        .reward-wall {
+            max-width: 320px;
+            margin: 15px auto 0;
+            background: linear-gradient(135deg, rgba(255,215,0,0.15) 0%, rgba(255,140,0,0.1) 100%);
+            border: 2px solid rgba(255, 215, 0, 0.4);
+            border-radius: 12px;
+            padding: 10px 15px;
+            box-shadow: 
+                0 0 20px rgba(255, 215, 0, 0.2),
+                inset 0 0 20px rgba(255, 215, 0, 0.05);
+            overflow: hidden;
+        }
+        
+        .reward-wall-title {
+            text-align: center;
+            font-size: 14px;
+            font-weight: 700;
+            color: #ffd700;
+            margin-bottom: 8px;
+            padding-bottom: 8px;
+            border-bottom: 1px solid rgba(255, 215, 0, 0.3);
+            text-shadow: 0 0 10px rgba(255, 215, 0, 0.5);
+        }
+        
+        .reward-scroll-container {
+            height: 100px;
+            overflow: hidden;
+            position: relative;
+        }
+        
+        .reward-scroll-content {
+            animation: scroll-up 10s linear infinite;
+        }
+        
+        .reward-item {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            padding: 6px 0;
+            white-space: nowrap;
+            font-size: 12px;
+            border-bottom: 1px dashed rgba(255, 215, 0, 0.2);
+        }
+        
+        .reward-item:last-child {
+            border-bottom: none;
+        }
+        
+        .reward-icon-small {
+            font-size: 14px;
+        }
+        
+        .reward-user {
+            color: rgba(255, 255, 255, 0.8);
+            font-weight: 500;
+        }
+        
+        .reward-action {
+            color: rgba(255, 255, 255, 0.6);
+        }
+        
+        .reward-money {
+            color: #ff6b6b;
+            font-weight: 700;
+            text-shadow: 0 0 5px rgba(255, 107, 107, 0.5);
+        }
+        
+        @keyframes scroll-up {
+            0% { transform: translateY(0); }
+            100% { transform: translateY(-50%); }
+        }
+        
+        /* 页面基础样式 */
+
+        
+        h2 {
+            color: #ffd700;
+            margin: 30px 0 15px;
+            text-shadow: 0 0 10px rgba(255,215,0,0.5);
+        }
+        
+        .demo-section {
+            background: rgba(0,0,0,0.3);
+            border-radius: 15px;
+            padding: 20px;
+            margin: 20px 0;
+        }
+a.btn1 {
+  display: inline-block;
+  padding: 3% 3%;
+  text-align: center;
+  text-decoration: none;
+  
+  /* 背景图横向自适应，高度自动 */
+  background-image: url(./images/bg2.webp);
+  background-size: 100% 100%;
+  background-position: center top;
+  background-repeat: no-repeat;
+  
+  border-radius: 6px;
+}
+
+a.btn1 .download-text {
+  color: #fff;
+  font-size: 14px;
+}
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            -webkit-tap-highlight-color: transparent;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            text-rendering: optimizeLegibility;
+        }
+
+        html {
+            font-size: 16px;
+            -webkit-text-size-adjust: 100%;
+            height: 100%;
+        }
+
+        body {
+            background: #061523;
+            background: linear-gradient(145deg, #051421 0%, #0B2538 50%, #071A29 100%);
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Helvetica Neue", Helvetica, Arial, sans-serif;
+            color: #FFFFFF;
+            line-height: 1.6;
+            overflow-x: hidden;
+            min-height: 100vh;
+            min-height: 100dvh;
+            padding-bottom: 20px;
+        }
+
+        body::before {
+            content: "";
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle at 50% 20%, rgba(232, 180, 75, 0.08), transparent 70%);
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 0.8rem 0.8rem 3.5rem;
+            position: relative;
+            z-index: 2;
+        }
+
+        .hero {
+            text-align: center;
+            margin-bottom: 0.8rem;
+        }
+
+        .main-title {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "PingFang SC", "Microsoft YaHei", sans-serif;
+            font-size: clamp(1.8rem, 6.5vw, 2.8rem);
+            font-weight: 900;
+            color: #FFDF80;
+            text-shadow: 0 2px 8px rgba(0, 0, 0, 0.8), 0 0 18px rgba(232, 180, 75, 0.4);
+            letter-spacing: 0.04em;
+            margin-bottom: 0.2rem;
+            display: inline-block;
+            line-height: 1.15;
+        }
+
+        .tagline {
+            font-size: clamp(0.75rem, 2.3vw, 0.88rem);
+            font-weight: 700;
+            color: #FFFFFF;
+            background: rgba(6, 18, 32, 0.92);
+            display: inline-block;
+            padding: 0.35rem 1.1rem;
+            border-radius: 40px;
+            border: 1px solid rgba(232, 180, 75, 0.6);
+            box-shadow: 0 3px 10px rgba(0,0,0,0.5);
+            margin-top: 0.2rem;
+        }
+        .tagline i { margin: 0 5px; color: #FFD700; }
+
+        .prestige-card {
+            background: rgba(0, 0, 0, 0.88);
+            border-radius: 1.2rem;
+            border: 1.5px solid rgba(232, 180, 75, 0.5);
+            padding: 0.8rem 0.6rem;
+            margin: 0.6rem 0 0.8rem;
+            box-shadow: 0 12px 28px rgba(0, 0, 0, 0.6), inset 0 1px 0 rgba(255, 255, 255, 0.12);
+        }
+
+        .dual-luxury {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 0.8rem;
+        }
+
+        .luxury-room {
+            background: linear-gradient(160deg, rgba(0, 0, 0, 0.92) 0%, rgba(25, 25, 26, 0.95) 100%);
+            border-radius: 1rem;
+            padding: 0.9rem 0.8rem;
+            transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+            border: 1px solid rgba(232, 180, 75, 0.45);
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        .luxury-room::before {
+            content: "";
+            position: absolute;
+            top: 0; left: 0; right: 0;
+            height: 3px;
+            background: linear-gradient(90deg, transparent, #FFD700, transparent);
+        }
+        .luxury-room:hover, .luxury-room:active {
+            border-color: #FFD700;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 18px rgba(232, 180, 75, 0.25);
+        }
+
+        .room-icon {
+            font-size: 1.6rem;
+            color: #FFD700;
+            margin-bottom: 0.1rem;
+            text-shadow: 0 0 10px rgba(255, 215, 0, 0.6);
+        }
+
+        .room-name-lux {
+            font-size: 1.25rem;
+            font-weight: 800;
+            color: #FFE699;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.7);
+            line-height: 1.2;
+        }
+
+        .room-number-super {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            font-size: clamp(1.5rem, 4.8vw, 2.1rem);
+            font-weight: 900;
+            color: #FFFFFF;
+            text-shadow: 0 0 10px rgba(255, 215, 0, 0.8), 0 2px 5px #000000;
+            letter-spacing: 0.06em;
+            cursor: pointer;
+            margin: 0.2rem 0;
+            transition: transform 0.2s;
+            display: inline-block;
+        }
+        .room-number-super:active {
+            transform: scale(0.96);
+        }
+
+        .copy-tip {
+            background: rgba(0, 0, 0, 0.65);
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+            font-size: 0.78rem;
+            font-weight: 700;
+            padding: 0.25rem 0.85rem;
+            border-radius: 30px;
+            cursor: pointer;
+            border: 1px solid #FFD700;
+            margin-bottom: 0.5rem;
+            color: #FFFFFF;
+            transition: all 0.2s;
+        }
+        .copy-tip:active {
+            background: rgba(232, 180, 75, 0.4);
+        }
+
+        .button-group {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 6px;
+            margin: 0.3rem 0;
+        }
+
+        .btn-lux {
+            background: rgba(18, 44, 70, 0.9);
+            padding: 0.4rem 0.8rem;
+            border-radius: 2rem;
+            font-size: 0.78rem;
+            font-weight: 700;
+            color: #FFFFFF;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+            border: 1px solid #4A7398;
+            cursor: pointer;
+            transition: all 0.2s;
+            white-space: nowrap;
+        }
+        .btn-lux-primary {
+            background: linear-gradient(105deg, #FFD700 0%, #E5A823 100%);
+            color: #051421;
+            font-weight: 800;
+            border: none;
+            box-shadow: 0 3px 10px rgba(232, 180, 75, 0.35);
+        }
+        .btn-lux-primary:active {
+            background: linear-gradient(105deg, #FFE466, #EEB833);
+            transform: scale(0.96);
+        }
+        .btn-lux-outline:active {
+            background: rgba(232, 180, 75, 0.3);
+            border-color: #FFD700;
+            color: #FFFFFF;
+        }
+        .btn-lux-backup {
+            border-color: rgba(255, 215, 0, 0.6);
+            background: rgba(232, 180, 75, 0.18);
+        }
+
+        .ios-guide-pill {
+            font-size: 0.72rem;
+            font-weight: 600;
+            color: #FFEFA6;
+            margin-top: 6px;
+            display: inline-block;
+            background: rgba(0, 0, 0, 0.55);
+            padding: 3px 10px;
+            border-radius: 20px;
+            border: 1px dashed rgba(255, 215, 0, 0.5);
+        }
+
+        .notice-warning {
+            background: rgba(5, 18, 32, 0.92);
+            border-radius: 0.9rem;
+            padding: 0.65rem 0.85rem;
+            margin: 0.6rem 0;
+            border-left: 4px solid #FFD700;
+            border-top: 1px solid rgba(255, 215, 0, 0.25);
+            border-right: 1px solid rgba(255, 215, 0, 0.25);
+            border-bottom: 1px solid rgba(255, 215, 0, 0.25);
+            text-align: center;
+            font-size: 0.8rem;
+            color: #FFFFFF;
+            box-shadow: 0 4px 14px rgba(0, 0, 0, 0.4);
+        }
+        .notice-warning i { color: #FFD700; margin-right: 5px; }
+        .notice-line strong {
+            color: #FFDF80;
+            font-weight: 800;
+        }
+
+        .official-gold {
+            background: rgba(5, 18, 32, 0.88);
+            border-radius: 0.9rem;
+            padding: 0.65rem 0.8rem;
+            margin: 0.6rem 0;
+            border: 1px solid rgba(232, 180, 75, 0.45);
+            text-align: center;
+        }
+        .official-title {
+            font-size: 0.82rem;
+            font-weight: 700;
+            color: #FFD700;
+            margin-bottom: 0.4rem;
+        }
+        .official-domains {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 0.6rem;
+        }
+        .domain-item {
+            background: rgba(0, 0, 0, 0.55);
+            padding: 0.3rem 0.9rem;
+            border-radius: 40px;
+            border: 1px solid rgba(232, 180, 75, 0.4);
+            font-size: 0.82rem;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            color: #FFFFFF;
+        }
+        .domain-item a { color: #FFE299; text-decoration: none; }
+        .domain-item a:hover { color: #FFD700; }
+
+        .feature-strip {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 0.4rem;
+            margin: 0.6rem 0;
+        }
+        .feature-strip span {
+            background: rgba(5, 18, 32, 0.85);
+            padding: 0.25rem 0.7rem;
+            border-radius: 30px;
+            font-size: 0.7rem;
+            font-weight: 600;
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+            border: 1px solid rgba(232, 180, 75, 0.3);
+            color: #FFFFFF;
+        }
+        .feature-strip i { color: #FFD700; }
+
+        .footer-note {
+            text-align: center;
+            margin-top: 0.8rem;
+            padding-top: 0.6rem;
+            border-top: 1px solid rgba(232, 180, 75, 0.25);
+            font-size: 0.7rem;
+            font-weight: 500;
+            color: #C2DAF0;
+            line-height: 1.6;
+        }
+
+        .kefu-float-widget {
+            position: fixed;
+            right: 14px;
+            bottom: 140px;
+            z-index: 9999;
+            animation: floatGlow 3s infinite ease-in-out;
+        }
+        @keyframes floatGlow {
+            0%, 100% { transform: translateY(0); filter: drop-shadow(0 4px 12px rgba(255, 61, 0, 0.5)); }
+            50% { transform: translateY(-8px); filter: drop-shadow(0 8px 20px rgba(255, 215, 0, 0.7)); }
+        }
+        .kefu-float-btn {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #FF3D00, #FF9100);
+            color: #FFFFFF !important;
+            text-decoration: none !important;
+            box-shadow: 0 4px 18px rgba(255, 61, 0, 0.5), inset 0 1px 1px rgba(255, 255, 255, 0.4);
+            border: 2px solid #FFE57F;
+            transition: all 0.2s ease;
+            cursor: pointer;
+        }
+        .kefu-float-btn:active {
+            transform: scale(0.92);
+            background: linear-gradient(135deg, #DD2C00, #FF3D00);
+        }
+        .kefu-icon-wrap {
+            font-size: 1.3rem;
+            line-height: 1;
+            margin-bottom: 2px;
+        }
+        .kefu-text {
+            font-size: 0.62rem;
+            font-weight: 800;
+            letter-spacing: 0.5px;
+            white-space: nowrap;
+        }
+
+        .hero-kefu-bar {
+            margin-top: 0.8rem;
+            display: flex;
+            justify-content: center;
+        }
+        .hero-kefu-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            padding: 7px 20px;
+            background: linear-gradient(135deg, #FF3D00, #DD2C00);
+            color: #FFFFFF !important;
+            border-radius: 20px;
+            font-weight: 700;
+            font-size: 0.88rem;
+            text-decoration: none !important;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            box-shadow: 0 4px 12px rgba(255, 61, 0, 0.4);
+            transition: all 0.2s ease;
+            cursor: pointer;
+        }
+        .hero-kefu-btn:hover, .hero-kefu-btn:active {
+            transform: translateY(-2px) scale(1.03);
+            box-shadow: 0 6px 16px rgba(255, 61, 0, 0.6);
+            color: #FFFFFF !important;
+        }
+
+        .modal-overlay {
+            display: none;
+            position: fixed;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            background: rgba(0, 0, 0, 0.88);
+            z-index: 9999;
+            align-items: center;
+            justify-content: center;
+            padding: 1rem;
+        }
+        .modal-container {
+            background: #0B1D2D;
+            border-radius: 1.5rem;
+            width: 100%;
+            max-width: 380px;
+            border: 1.5px solid #FFD700;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.7);
+            overflow: hidden;
+            animation: modalFadeIn 0.25s ease-out;
+        }
+        @keyframes modalFadeIn {
+            from { opacity: 0; transform: scale(0.92); }
+            to { opacity: 1; transform: scale(1); }
+        }
+        .modal-header {
+            padding: 1rem 1.2rem;
+            background: rgba(0,0,0,0.3);
+            border-bottom: 1px solid rgba(232, 180, 75, 0.4);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .modal-header h3 {
+            font-size: 1.1rem;
+            font-weight: 800;
+            color: #FFFFFF;
+        }
+        .modal-close { color: #FFD700; font-size: 1.5rem; cursor: pointer; }
+        .modal-body { padding: 1.2rem; text-align: center; }
+        .ios-icon { font-size: 2.4rem; color: #FFD700; margin-bottom: 0.5rem; }
+        .step-guide {
+            background: rgba(0, 0, 0, 0.45);
+            border-radius: 0.8rem;
+            padding: 0.9rem;
+            margin: 0.8rem 0;
+            text-align: left;
+        }
+        .step-guide p {
+            margin: 0.5rem 0;
+            display: flex;
+            gap: 10px;
+            align-items: center;
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: #FFFFFF;
+        }
+        .step-guide i { width: 18px; color: #FFD700; }
+
+        .copy-link-btn {
+            background: linear-gradient(105deg, #FFD700, #E5A823);
+            border: none;
+            padding: 0.6rem 1.2rem;
+            border-radius: 2rem;
+            font-size: 0.88rem;
+            font-weight: 800;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            cursor: pointer;
+            color: #051421;
+            width: 100%;
+            justify-content: center;
+            margin-top: 0.4rem;
+        }
+
+        .toast-msg {
+            position: fixed;
+            bottom: 85px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: #0B1D2D;
+            color: #FFFFFF;
+            padding: 0.5rem 1.4rem;
+            border-radius: 36px;
+            font-size: 0.85rem;
+            font-weight: 700;
+            border: 1.5px solid #FFD700;
+            z-index: 10000;
+            opacity: 0;
+            transition: opacity 0.25s, transform 0.25s;
+            pointer-events: none;
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.6);
+            white-space: nowrap;
+        }
+
+        @media (min-width: 768px) {
+            .container { padding-top: 2rem; }
+            .hero { margin-bottom: 2rem; }
+            .main-title { font-size: 3.6rem; }
+            .tagline { font-size: 1.05rem; padding: 0.5rem 2rem; }
+            .dual-luxury { grid-template-columns: repeat(2, 1fr); gap: 1.5rem; }
+            .luxury-room { padding: 1.6rem 1.4rem; }
+            .btn-lux { padding: 0.55rem 1.25rem; font-size: 0.88rem; }
+            .btn-lux:hover { transform: translateY(-2px); box-shadow: 0 6px 16px rgba(232, 180, 75, 0.35); }
+            body { padding-bottom: 30px; }
+        }
+    </style>
+
+<body>
+    
+    <!-- ========== 1. 在线人数 HTML代码 ========== -->
+    
+        <!-- 在线人数显示 -->
+        <div class="online-counter" id="onlineCounter">
+            <div class="online-dot"></div>
+            <span class="online-text">当前在线</span>
+            <span class="online-number" id="onlineNumber">7688
+			</span>
+        </div>
+    
+    
+    <!-- ========== 2. 实时提现 HTML代码 ========== -->
+    
+ 
+    
+    <!-- ========== JavaScript 功能代码 ========== -->
+    <script>
+       // ========== 在线人数动态更新 ==========
+let currentOnline;
+const onlineNumberEl = document.getElementById('onlineNumber');
+
+// 页面初次进入，3200‑9999 随机初始值
+currentOnline = Math.floor(Math.random() * (9999 - 3200 + 1)) + 3200;
+
+function updateOnlineNumber() {
+    // 随机增减人数（模拟真实波动）
+    const change = Math.floor(Math.random() * 50) - 20;
+    currentOnline += change;
+    // 保持在合理范围
+    if (currentOnline < 800) currentOnline = 800;
+    if (currentOnline > 12000) currentOnline = 12000;
+
+    // 添加跳动动画
+    onlineNumberEl.classList.add('jump');
+    setTimeout(() => {
+        onlineNumberEl.classList.remove('jump');
+    }, 400);
+
+    // 格式化数字
+    onlineNumberEl.textContent = currentOnline.toLocaleString();
+}
+
+// 页面加载立刻渲染一次初始数字
+onlineNumberEl.textContent = currentOnline.toLocaleString();
+
+// 每3秒更新一次在线人数
+setInterval(updateOnlineNumber, 3000);
+
+        
+        // ========== 实时提现滚动墙系统 ==========
+        const rewardScrollContent = document.getElementById('rewardScrollContent');
+        const rewardNames = ['张**老板', '李**老板', '王**老板', '刘**老板', '陈**老板', '杨**老板', '赵**老板', '黄**老板', '周**老板', '吴**老板'];
+        const rewardAmounts = ['¥1,888', '¥3,888', '¥5,888', '¥8,888', '¥10,000', '¥18,888', '¥28,888', '¥66,666'];
+        const rewardActions = ['刚提现', '中奖', '充值', '赢得'];
+        
+        function generateRewardItems() {
+            let html = '';
+            // 生成10条数据（5条显示，5条用于循环）
+            for (let i = 0; i < 10; i++) {
+                const randomName = rewardNames[Math.floor(Math.random() * rewardNames.length)];
+                const randomAmount = rewardAmounts[Math.floor(Math.random() * rewardAmounts.length)];
+                const randomAction = rewardActions[Math.floor(Math.random() * rewardActions.length)];
+                html += `
+                    <div class="reward-item">
+                        <span class="reward-icon-small">🎉</span>
+                        <span class="reward-user">${randomName}</span>
+                        <span class="reward-action">${randomAction}</span>
+                        <span class="reward-money">${randomAmount}</span>
+                    </div>
+                `;
+            }
+            rewardScrollContent.innerHTML = html;
+        }
+        
+        // 初始化生成奖励条目
+        generateRewardItems();
+        
+        // 每5秒更新一条数据
+        function updateRewardItem() {
+            const items = rewardScrollContent.querySelectorAll('.reward-item');
+            const randomIndex = Math.floor(Math.random() * items.length);
+            const randomName = rewardNames[Math.floor(Math.random() * rewardNames.length)];
+            const randomAmount = rewardAmounts[Math.floor(Math.random() * rewardAmounts.length)];
+            const randomAction = rewardActions[Math.floor(Math.random() * rewardActions.length)];
+            
+            items[randomIndex].innerHTML = `
+                <span class="reward-icon-small">🎉</span>
+                <span class="reward-user">${randomName}</span>
+                <span class="reward-action">${randomAction}</span>
+                <span class="reward-money">${randomAmount}</span>
+            `;
+        }
+        
+        setInterval(updateRewardItem, 5000);
+    </script>
+<body>
+
+
+           
 
             <div class="cont-box" style="margin-top: -18px;">
 
                 <div class="notice-bar">
-                    <img class="img" src="./skin/icon1.png">
+                    <img class="img" src="./skin/icon1.webp">
                     <div class="msg-bar">
                         <div class="marquee-container">
-                            <div class="marquee">
-                                欢迎来到金河娱乐，本平台已上押至官方，请各位老板放心娱乐，在本平台如发生不下分，卡回款，请及时联系本网页在线客服，会及时处理！
+                            <div class="marquee" style="font-size: 17px;color: #D7C09D;">
+                                恭喜发财：十年老平台，信誉保障、福利优厚、优质服务，恭喜发财长期招收实力代理、合作伙伴，共同携手创造辉煌！所有下注订单对接盘口，资金安全！
                             </div>
                         </div>
                     </div>
                 </div>
                 <div class="app-box">
                     <a href="javascript:;">
-              <img src="./skin/03e415ea274147be9de036e938fc0258.png">
+              <img src="./skin/dj1.webp">
             </a>
                     <a href="javascript:;">
-              <img src="./skin/6ee70038418c4a5c951fca66db9ed086.png">
+              <img src="./skin/6ee70038418c4a5c951fca66db9ed086.webp">
             </a>
                     <a href="javascript:;">
-               <img src="./skin/2416b90c812b4668aec2cea16b114e6c.png">
-              </a>
+              <img src="./skin/2416b90c812b4668aec2cea16b114e6c.webp">
+            </a>
                     <a href="javascript:;">
-               <img src="./skin/6af43908668440ee8ff2eaa9f82d08a3.png">
+              <img src="./skin/6af43908668440ee8ff2eaa9f82d08a3.webp">
             </a>
                 </div>
                 <div class="pay-box">
-                    <img src="./skin/img1.png">
+                    <img src="./skin/img1.webp">
                 </div>
                 <div class="app-list">
+<div style="text-align:center"><strong class="gold-flow">请点击下载名爵后申请加入房间！<br>如有问题可向网页在线客服询问！</strong></div>
 
-                    <div class="app-item">
-                        <div class="info-box">
-                            <div class="app-icon">
-                                <img src="./static/upload/image/20250327/1743067939459295.png" alt="">
-                            </div>
-                            <div class="app-info">
-                                <div class="top-info">
-                                    <div class="info">
-                                        <div class="name">
-                                            金河娱乐
-                                        </div>
-                                        <div class="link">
-                                        <div class="name">
-                                            名爵:211526
-                                        </div>
-                                            <a href="javascript:;">
-                          ㅤㅤㅤㅤㅤ
+<style>
+/* 黄白交替爆闪 + 字号缩放动画 */
+.flash-bigsmall {
+  font-size: 30px;
+  animation: flashYellowWhite 0.3s infinite alternate, sizeChange 0.4s infinite alternate;
+  font-weight: 900;
+}
 
+/* 黄白颜色闪烁 */
+@keyframes flashYellowWhite {
+  0% { color: #fff; text-shadow: 0 0 8px #fff,0 0 15px #ffdd00; }
+  100% { color: #ffdd00; text-shadow: 0 0 8px #ffdd00,0 0 15px #fff; }
+}
+
+/* 字体忽大忽小缩放 */
+@keyframes sizeChange {
+  0% { transform: scale(0.8); }
+  100% { transform: scale(1.3); }
+}
+</style>
+<!-- 复制提示弹层（如果没有的话加上） -->
+<div id="copyToast" style="position:fixed;top:50%;left:50%;transform:translate(-50%,-50%);background:rgba(0,0,0,0.75);color:#fff;padding:10px 24px;border-radius:8px;z-index:9999;display:none;font-size:14px;">复制成功</div>
+
+<script>
+function copyMj() {
+    // 获取房间号文本
+    var roomNo = document.getElementById('mjRoomMain').innerText.trim();
+    
+    // 创建临时textarea
+    var textarea = document.createElement('textarea');
+    textarea.value = roomNo;
+    textarea.style.position = 'fixed';
+    textarea.style.opacity = '0';
+    document.body.appendChild(textarea);
+    textarea.select();
+    
+    try {
+        // 执行复制
+        document.execCommand('copy');
+        showToast('复制成功：' + roomNo);
+    } catch (err) {
+        // 兼容降级方案
+        if (navigator.clipboard) {
+            navigator.clipboard.writeText(roomNo).then(function() {
+                showToast('复制成功：' + roomNo);
+            });
+        } else {
+            showToast('复制失败，请手动复制：' + roomNo);
+        }
+    }
+    
+    document.body.removeChild(textarea);
+}
+
+// 提示框
+function showToast(msg) {
+    var toast = document.getElementById('copyToast');
+    toast.innerText = msg;
+    toast.style.display = 'block';
+    setTimeout(function() {
+        toast.style.display = 'none';
+    }, 1500);
+}
+</script>
+
+   <div class="prestige-card">
+            <div class="dual-luxury">
+                <div class="luxury-room">
+                    <div class="room-icon"><i class="fas fa-gem"></i></div>
+                    <div class="room-name-lux">名爵大厅</div>
+                    <div class="room-number-super" id="mjRoomMain" onclick="copyMj()">383838</div>
+                    <div class="copy-tip" id="copyMjMain" onclick="copyMj()">
+                        <i class="far fa-copy"></i> 复制房间号 383838
+                    </div>
+                    <div class="button-group">
+                        <a href="https://www.mjweb207.xyz?roomNum=383838" target="_blank" rel="noopener noreferrer" class="btn-lux btn-lux-primary">
+                            <i class="fas fa-globe"></i> 名爵官网H5
                         </a>
-                                            <a href="javascript:;">
-                            
-
-                            
-                          </a>
-                                            <a href="javascript:;">
-                          
+                        <a href="tzmjxz.html" target="_blank" rel="noopener noreferrer" class="btn-lux btn-lux-outline">
+                            <i class="fab fa-android"></i> 安卓下载
                         </a>
-                                        </div>
-                                    </div>
-                                    <a class="active" href="fl.html">
-                      <img src="./skin/img2.png" alt="">
+                        <a href="https://bv02.cc/mjpg1xz.html" class="btn-lux btn-lux-outline" style="text-decoration:none;display:inline-block;">
+    <i class="fab fa-apple"></i> 苹果安装
+</a>
+
+                    </div>
+                    <div class="button-group">
+                        <a href="tzmjxz.html" target="_blank" rel="noopener noreferrer" class="btn-lux btn-lux-outline btn-lux-backup">
+                            <i class="fab fa-android"></i> 安卓备用
+                        </a>
+           <a href="https://bv02.cc/mjpg1xz.html" class="btn-lux btn-lux-outline" style="text-decoration:none;display:inline-block;">
+    <i class="fab fa-apple"></i> 苹果安装
+</a>
+
+                    </div>
+                    <div class="ios-guide-pill">📱 苹果iOS点击复制链接并用Safari打开</div>
+                </div>
+</div>
+
+              <style>
+.gold-flow {
+    display: inline-block;
+    background: linear-gradient(90deg, #8c6239, #e6c86e, #fff8c0, #e6c86e, #8c6239);
+    background-size: 200% auto;
+    /* 双前缀补齐，兼容所有浏览器 */
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: transparent;
+    animation: goldShine 2s linear infinite;
+    text-decoration: none;
+}
+@keyframes goldShine {
+    0% { background-position: 0% center; }
+    100% { background-position: 200% center; }
+}
+</style>
+
                     
-                    </a>
-                                </div>
-                                <div class="label-list">
-                                    <a href="javascript:;" class="label">
-                      澳洲5/10
-                    </a>
-                                    <a href="javascript:;" class="label">
-                      极速赛车
-                    </a>
-                                    <a href="javascript:;" class="label">
-                      极速飞艇
-                    </a>
-                                    <a href="javascript:;" class="label">
-                      极速时时彩
-                    </a>
-                                    <a href="javascript:;" class="label">
-                      重庆时时彩
-                    </a>
-                                    <a href="javascript:;" class="label">
-                      幸运飞艇
-                    </a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="btn-box">
-                            <a class="btn" href="#" id="link19">
-                  <img src="./skin/icon6.png">
-                  <span>
-                    下载APP
-                  </span>
-                </a>
-                            <a class="btn" href="#" id="kefu19">
-                  <img src="./skin/icon7.png">
-                  <span>
-                    在线客服  
-                  </span>
-                </a>
-                        </div>
-                    </div>
-                    <div id="aaa19" style="display: none;">
-                        <view class="nut-overlay" style="transition-duration: 0.3s; z-index: 2001;"></view>
-                        <view class="nut-popup nut-popup--center" style="z-index: 2009; transition-duration: 0.3s;">
-                            <div class="dailog-popup download">
-                                <div class="close" id="guanbi19"></div>
-                                <div class="title"></div>
-                                <div class="line"></div>
-                                <div class="btn-list"><a class="btn" href="tzmjxz.html"><img src="./images/icon10.png" alt=""><span>  名爵 APP安卓官方下载</span></a><a class="btn" href="https://bv02.cc/mjpg1xz.html"><img src="./images/icon9.png" alt=""><span>  名爵 APP苹果官方直装</span></a><a class="btn" href="https://www.mjweb203.xyz/"><img src="./images/icon10.png" alt=""><span>  名爵H5登录</span></a>
-                                    <a class="btn" id="apppg19"><img src="./images/icon11.png" alt=""><span>  名爵苹果教程</span></a><a class="btn" id="anzhuo19"><img src="./images/icon11.png" alt=""><span>  名爵安卓教程</span></a></div>
-                            </div>
-                        </view>
-                    </div>
-                    <script>
-                        const link19 = document.getElementById('link19');
-                        const aaa19 = document.getElementById('aaa19');
-                        link19.addEventListener('click', function(event) {
-                            event.preventDefault();
-                            aaa19.style.display = 'block';
-                        });
-                        const closeButton19 = document.getElementById('guanbi19');
-                        const content19 = document.getElementById('aaa19');
-                        closeButton19.addEventListener('click', function() {
-                            content19.style.display = 'none';
-                        });
-                    </script>
-                    <div id="kefudiv19" style="display: none;">
-                        <view class="nut-overlay" style="transition-duration: 0.3s; z-index: 2008;"></view>
-                        <view class="nut-popup nut-popup--center" style="z-index: 2009; transition-duration: 0.3s;">
-                            <div class="dailog-popup kf" style="background: url(./skin/bg4s.png) 0% 0% / 100% 100% no-repeat; position: relative;">
-                                <div class="close" id="guanbib19"></div>
-                                <div class="title"></div>
-                                <div class="line"></div>
-                                <div class="kf-list"><a class="kf-item" href="" target="_blank"><img class="icon1" src="./skin/0544aa35b27947c89122b31183d19d04.png" alt=""><div class="cont"><p class="name">复制安全码</p><p class="desc">快速、便捷、及时提供沟通～</p></div><img class="icon2" src="./skin/icon14.png" alt=""></a>
-                                    <a class="kf-item" href="javascript:;"><img class="icon1" src="./skin/qq.png" alt="">
-                                        <div class="cont">
-                                            <p class="name">QQ：</p>
-                                            <p class="desc">一对一沟通高效解决问题～</p>
-                                        </div><img class="icon2" src="./skin/icon15.png"></a>
-                                </div>
-                            </div>
-                        </view>
-                    </div>
-                    <script>
-                        const kefu19 = document.getElementById('kefu19');
-                        const kefudiv19 = document.getElementById('kefudiv19');
-                        if (kefu19) {
-                            kefu19.addEventListener('click', function(event) {
-                                event.preventDefault();
-                                // 跳转到百度
-                                window.location.href = 'https://tawk.to/chat/6873963c0b90f6190edc8720/1j01o5o27';
-                            });
-                        }
-                    </script>
+              <div class="app-item">
 
-                    <div class="app-item">
                         <div class="info-box">
                             <div class="app-icon">
-                                <img src="./static/upload/image/20250327/1743067973965241.png" alt="">
+                                <img src="./static/upload/image/20250327/1743067973965241.webp" alt="">
                             </div>
                             <div class="app-info">
                                 <div class="top-info">
@@ -245,22 +1221,18 @@
                                         <div class="name">
                                             168 开奖网
                                         </div>
-                                                                                <div class="name">
-                                                                                    ㅤㅤㅤㅤㅤ
-                                            </div>
                                         <div class="link">
-                                            <a href="javascript:;">
-                          
+                                            <a href="javascript:;" class="gold-flow">
+                          认准恭喜发财,联系在线客服
                         </a>
                                             <a href="javascript:;">
                           
                         </a>
                                         </div>
                                     </div>
-                                    <a class="active" href="fl.html">
-                      <img src="./skin/img2.png" alt="">
+                                   <a class="active" href="fl.html">
+                      <img src="./skin/img2.webp" alt="">
                     </a>
-               
                                 </div>
                                 <div class="label-list">
                                     <a href="javascript:;" class="label">
@@ -285,91 +1257,84 @@
                             </div>
                         </div>
                         <div class="btn-box">
-                            <a class="btn" href="#" id="link21">
-                  <img src="./skin/icon15.png">
-                  <span>
-                   进入168开奖网
+                            <a class="btn" href="index.html#" id="link23">
+                  <img src="./skin/icon6.webp">
+                 <span class="download-text">
+                    进入168开奖网
                   </span>
                 </a>
-                            <a class="btn" href="#" id="kefu21">
-                  <img src="./skin/icon7.png">
-                  <span>
+                            <a class="btn" href="index.html#" id="kefu23">
+                  <img src="./skin/icon7.webp">
+                  <span class="download-text">
                     在线客服
                   </span>
                 </a>
                         </div>
                     </div>
-                    <div id="aaa21" style="display: none;">
+                    <div id="aaa23" style="display: none;">
                         <view class="nut-overlay" style="transition-duration: 0.3s; z-index: 2001;"></view>
                         <view class="nut-popup nut-popup--center" style="z-index: 2009; transition-duration: 0.3s;">
                             <div class="dailog-popup download">
-                                <div class="close" id="guanbi21"></div>
+                                <div class="close" id="guanbi23"></div>
                                 <div class="title"></div>
                                 <div class="line"></div>
-                                <div class="btn-list"><a class="btn" href="https://1689437.com/"><img src="./images/icon9.png" alt=""><span>  168 开奖网苹果官方下载</span></a><a class="btn" href="https://1689437.com/"><img src="./images/icon10.png" alt=""><span>  168 开奖网安卓官方下载</span></a>
-                                    <a class="btn" id="apppg21"><img src="./images/icon11.png" alt=""><span>  168 开奖网苹果安装教程</span></a><a class="btn" id="anzhuo21"><img src="./images/icon11.png" alt=""><span>  168 开奖网安卓安装教程</span></a></div>
+                                <div class="btn-list"><a class="btn" href="https://1689437.com/"><img src="./images/icon9.webp" alt=""><span class="download-text">  168 开奖网苹果官方下载</span></a><a class="btn" href="https://1689437.com/"><img src="./images/icon10.webp" alt=""><span class="download-text">  168 开奖网安卓官方下载</span></a>
+                                    <a
+                                        class="btn" id="apppg23"><img src="./images/icon11.webp" alt=""><span class="download-text">  168 开奖网苹果安装教程</span></a><a class="btn" id="anzhuo23"><img src="./images/icon11.webp" alt=""><span class="download-text">  168 开奖网安卓安装教程</span></a></div>
                             </div>
                         </view>
                     </div>
                     <script>
-                        const aaa21 = document.getElementById('aaa21');
-                        const link21 = document.getElementById('link21');
-                        if (link21) {
-                            link21.addEventListener('click', function(event) {
+                        const link23 = document.getElementById('link23');
+                        if (link23) {
+                            link23.addEventListener('click', function(event) {
                                 event.preventDefault();
                                 // 跳转到百度
                                 window.location.href = 'https://1689437.com/';
                             });
                         }
                     </script>
-                    <div id="kefudiv21" style="display: none;">
+                    <div id="kefudiv23" style="display: none;">
                         <view class="nut-overlay" style="transition-duration: 0.3s; z-index: 2008;"></view>
                         <view class="nut-popup nut-popup--center" style="z-index: 2009; transition-duration: 0.3s;">
-                            <div class="dailog-popup kf" style="background: url(./skin/bg4s.png) 0% 0% / 100% 100% no-repeat; position: relative;">
-                                <div class="close" id="guanbib21"></div>
+                            <div class="dailog-popup kf" style="background: url(skin/bg4s.webp) 0% 0% / 100% 100% no-repeat; position: relative;">
+                                <div class="close" id="guanbib23"></div>
                                 <div class="title"></div>
                                 <div class="line"></div>
-                                <div class="kf-list"><a class="kf-item" href="https://tawk.to/chat/6873963c0b90f6190edc8720/1j01o5o27" target="_blank"><img class="icon1" src="./skin/0544aa35b27947c89122b31183d19d04.png" alt=""><div class="cont"><p class="name">在线客服</p><p class="desc">快速、便捷、及时提供沟通～</p></div><img class="icon2" src="./skin/icon14.png" alt=""></a>
-                                    <a class="kf-item" href="javascript:;"><img class="icon1" src="./skin/qq.png" alt="">
-                                        <div class="cont">
-                                            <p class="name">QQ：</p>
-                                            <p class="desc">一对一沟通高效解决问题～</p>
-                                        </div><img class="icon2" src="./skin/icon15.png"></a>
+                                <div class="kf-list"><a class="kf-item" href="https://tawk.to/chat/6ad74a382af51134cbcc13f1/1k5cfjs2m" target="_blank"><img class="icon1" src="./skin/0544aa35b27947c89122b31183d19d04.webp" alt=""><div class="cont"><p class="download-text">在线客服</p><p class="download-text">快速、便捷、及时提供沟通～</p></div><img class="icon2" src="./skin/icon14.webp" alt=""></a>
+                 <a class="kf-item" href="https://qm.qq.com/q/uEGb7hxFZK" target="_blank">
+    <img class="icon1" src="./skin/2a33227e485644ec9c723710b4847416.png" alt="">
+    <div class="cont">
+        <p class="download-text"></p>
+        <p class="download-text">QQ:137799000</p>
+    </div>
+</a>
+
                                 </div>
                             </div>
                         </view>
                     </div>
                     <script>
-                        const kefu21 = document.getElementById('kefu21');
-                        const kefudiv21 = document.getElementById('kefudiv21');
-                        if (kefu21) {
-                            kefu21.addEventListener('click', function(event) {
-                                event.preventDefault();
-                                // 跳转到百度
-                                window.location.href = 'https://tawk.to/chat/6873963c0b90f6190edc8720/1j01o5o27';
-                            });
-                        }
+                        const kefu23 = document.getElementById('kefu23');
+                        const kefudiv23 = document.getElementById('kefudiv23');
+                        kefu23.addEventListener('click', function(event) {
+                            event.preventDefault();
+                            kefudiv23.style.display = 'block';
+                        });
+                        const closeButtona23 = document.getElementById('guanbib23');
+                        const contenta23 = document.getElementById('kefudiv23');
+                        closeButtona23.addEventListener('click', function() {
+                            contenta23.style.display = 'none';
+                        });
                     </script>
+                    
+  <img src="./images/fl.webp" class="responsive-img">
+                   
 
                 </div>
             </div>
         </div>
-        <div class="course-dialog show" id="dialog" style="display: none;">
-            <div id="dialogBg" class="bg"></div>
-            <div id="dialogCentera" class="center">
-                <div class="line"></div>
-                <div class="imgModel" id="iosImg">
-                    <div class="teachTitle">苹果安装教程</div><img src="./skin/783d34c4e5fd44b5837e74c2a67fb248.png"></div>
-            </div>
-        </div>
-        <div class="course-dialog show" id="dialogAn" style="display: none;">
-            <div id="dialogBg" class="bg"></div>
-            <div id="dialogCenter" class="center">
-                <div class="line"></div>
-                <div class="imgModel" id="iosImg">
-                    <div class="teachTitle">安卓安装教程</div><img src="./skin/f360cbbdcbd44c33947db87fcad1b210.png"></div>
-            </div>
-        </div>
+       
     </div>
     <script>
         const showContentLinks = document.querySelectorAll('[id^="apppg"]');
@@ -398,100 +1363,19 @@
 
         });
     </script>
-  <style>
-    /* 基础样式重置 */
-    * {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-    }
-
-    body {
-        min-height: 100vh;
-        background: url('') no-repeat center center fixed;
-        background-size: cover;
-        position: relative;
-        overflow: hidden;
-        font-family: Arial, "Microsoft Yahei", sans-serif;
-    }
-
-    /* 右上角链接容器 */
-    .top-links {
-        position: absolute;
-        top: 3%;
-        right: 3%;
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
-        gap: 15px;
-        max-width: 40%;
-    }
-
-    /* 右下角客服链接 - 已修改为固定定位并垂直居中 */
-    .bottom-link {
-        position: fixed;
-        top: 80%;
-        right: 20px;
-        transform: translateY(-50%);
-        animation: float 2s ease-in-out infinite;
-        z-index: 1000; /* 确保图标在所有元素上方 */
-    }
-
-    /* 图片链接通用样式 */
-    .image-link {
-        display: block;
-        transition: all 0.3s ease;
-        filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.3));
-    }
-
-    .image-link img {
-        width: 150px;
-        height: auto;
-        border-radius: 8px;
-    }
-
-    /* 悬停效果 */
-    .image-link:hover {
-        transform: scale(1.1); /* 修正缩放值，避免过大 */
-        filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.4));
-    }
-
-    /* 浮动动画 */
-    @keyframes float {
-        0%, 100% {
-            transform: translateY(-50%) translateY(0);
-        }
-        50% {
-            transform: translateY(-50%) translateY(-10px);
-        }
-    }
-
-    /* 手机端适配 */
-    @media (max-width: 768px) {
-        .top-links {
-            gap: 10px;
-            max-width: 60%;
-        }
-        .bottom-link {
-            right: 10px;
-        }
-        .bottom-link img {
-            width: 100px !important;
-        }
-    }
-
-    @media (min-width: 1200px) {
-        .top-links {
-            gap: 20px;
-        }
-    }
-</style>
     <script src="./skin/jquery-2.1.1.min.js"></script>
-    <script defer src="https://static.cloudflareinsights.com/beacon.min.js/vcd15cbe7772f49c399c6a5babf22c1241717689176015" integrity="sha512-ZpsOmlRQV6y907TI0dKBHq9Md29nnaEIPlkf84rnaERnq6zvWvPUqr2ft8M1aS28oN72PdrCzSjY4U6VaAw1EQ==" data-cf-beacon='{"rayId":"93b76891fde991b3","version":"2025.4.0-1-g37f21b1","r":1,"token":"5a58923ea5924829b6a8f22fe963063a","serverTiming":{"name":{"cfExtPri":true,"cfL4":true,"cfSpeedBrain":true,"cfCacheStatus":true}}}'
-        crossorigin="anonymous"></script>
-    <!-- 右下角客服链接 -->
-    <a href="https://tawk.to/chat/6873963c0b90f6190edc8720/1j01o5o27" class="image-link bottom-link" target="_blank">
-            <img src="./images/kefu.png" alt="在线客服！" style="width: 150px;">
-        </a>
 </body>
-
+<!--Start of Tawk.to Script-->
+<script type="text/javascript">
+var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+(function(){
+var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+s1.async=true;
+s1.src='https://embed.tawk.to/6ad74a382af51134cbcc13f1/1k5cfjs2m';
+s1.charset='UTF-8';
+s1.setAttribute('crossorigin','*');
+s0.parentNode.insertBefore(s1,s0);
+})();
+</script>
+<!--End of Tawk.to Script-->
 </html>

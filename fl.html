@@ -2,53 +2,99 @@
 
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <!-- 适配移动端刘海/地址栏 -->
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no,viewport-fit=cover">
     <script src="../skin/vue.global.prod.3.4.27.js"></script>
     <link rel="stylesheet" href="../skin/style.css">
     <link rel="stylesheet" href="../skin/style_icon.css">
     <link rel="stylesheet" href="../skin/index.css">
     <script src="../skin/nutui.umd.4.3.8.js"></script>
-    <title>金河福利</title>
+    <title>福利</title>
     <meta name="keywords" content="">
     <meta name="description" content="">
-    <link rel="icon" href="./skin/0544aa35b27947c89122b31183d19d04.png" type="image/png">
-    <style>
-        html,
-        body {
-            margin: 0;
-            padding: 0;
-            font-size: 12px;
-        }
+    <link rel="icon" href="../static/upload/image/20250417/1744888913542556.png" type="image/png">
+<style>
+    html,
+    body {
+        margin: 0;
+        padding: 0;
+        font-size: 12px;
+        /* 适配屏幕高度，预留底部安全区域 */
+        min-height: 100vh;
+        height: auto;
+        overflow-x: hidden; /* 仅隐藏横向滚动 */
+        /* 避开浏览器底部导航栏 */
+        padding-bottom: env(safe-area-inset-bottom);
+        padding-bottom: constant(safe-area-inset-bottom);
+        /* 避开顶部状态栏 */
+        padding-top: env(safe-area-inset-top);
+        padding-top: constant(safe-area-inset-top);
+    }
 
-        .myImg {
-            width: 100%;
-            height: auto;
-        }
+    body {
+        background-image: url("./images/bg.png");
+        background-repeat: no-repeat;
+        background-position: center center;
+        background-size: cover;
+        background-attachment: fixed;
+    }
 
-        .head-box {
-            width: 100%;
-            height: 15.2666666667vw;
-            background: url("./images/img4.gif") center bottom no-repeat;
-            background-size: 100% auto;
-            display: flex;
-            justify-content: flex-start;
-            align-items: center;
-            padding: 0 2.1333333333vw;
-            box-sizing: border-box
-        }
-    </style>
+    /* 核心：图片完整自适应屏幕，无遮挡 */
+    .myImg {
+        position: fixed;
+        top: env(safe-area-inset-top);
+        left: 0;
+        width: 100vw; /* 宽度占满屏幕 */
+        height: auto; /* 高度自动按比例适配 */
+        /* 最大高度 = 屏幕高度 - 顶部安全区 - 底部安全区 */
+        max-height: calc(100vh - env(safe-area-inset-top) - env(safe-area-inset-bottom));
+        max-height: calc(100vh - constant(safe-area-inset-top) - constant(safe-area-inset-bottom));
+        object-fit: contain; /* 完整显示图片，不变形、不裁剪 */
+        object-position: center; /* 图片居中 */
+        z-index: 0;
+        display: block;
+        margin: 0 auto;
+    }
+
+    /* 页面容器适配 */
+    #app.page {
+        min-height: 100vh;
+        width: 100%;
+        position: relative;
+        padding-bottom: env(safe-area-inset-bottom);
+        padding-bottom: constant(safe-area-inset-bottom);
+    }
+
+    .page-cont, .activty-popup {
+        min-height: 100vh;
+        width: 100%;
+        position: relative;
+    }
+</style>
 </head>
 
 <body>
     <div id="app" class="page" data-v-app="">
         <div class="page-cont">
             <div class="activty-popup">
-                <div class="head-box"><a class="go-back" href="./index.html"><img src="./images/icon16.png" alt="" style="width: 30px; height: 30px;"></a></div>
-                <img class="myImg" id="myImg" src="./images/fl1.jpg" title="1743435910908670.png" alt="海报.png" />
+                <!-- 彻底删除head-box相关代码 -->
+                <img class="myImg" id="myImg" src="./images/fl0.jpg" title="" alt="" />
             </div>
         </div>
     </div>
     <script src="./skin/jquery-2.1.1.min.js"></script>
+    <!-- 窗口变化时动态适配图片 -->
+    <script>
+        window.addEventListener('resize', function() {
+            const img = document.getElementById('myImg');
+            if (img) {
+                img.style.maxHeight = `calc(100vh - env(safe-area-inset-top) - env(safe-area-inset-bottom))`;
+                img.style.maxHeight = `calc(100vh - constant(safe-area-inset-top) - constant(safe-area-inset-bottom))`;
+                img.style.top = `env(safe-area-inset-top)`;
+                img.style.top = `constant(safe-area-inset-top)`;
+            }
+        });
+    </script>
 </body>
 
 </html>
